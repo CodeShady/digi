@@ -1,0 +1,13 @@
+{
+    "projects": {
+        
+        "ft_putstr.c": {
+            "test_code_b64": "aW50IG1haW4odm9pZCkgewogICAgZnRfcHV0c3RyKCJoZWxsbyB3b3JsZCIpOwogICAgZnRfcHV0c3RyKCJ3b2VpaGcwaHQwMjk0dGdqIik7CiAgICBmdF9wdXRzdHIoIiIpOwogICAgZnRfcHV0c3RyKCIhKSMoJCYhKCkjJiEpKCMmKSgjJiEpIik7Cn0K",
+            
+            "expected": {
+                "hash": "a339b6c0eccc0ae77a5efebc8fb0516a"
+            }
+        }
+    
+    }
+}
