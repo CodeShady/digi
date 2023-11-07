@@ -1,13 +1,170 @@
 {
+    "latest_version": "1.0",
     "projects": {
-        
-        "ft_putstr.c": {
-            "test_code_b64": "aW50IG1haW4odm9pZCkgewogICAgZnRfcHV0c3RyKCJoZWxsbyB3b3JsZCIpOwogICAgZnRfcHV0c3RyKCJ3b2VpaGcwaHQwMjk0dGdqIik7CiAgICBmdF9wdXRzdHIoIiIpOwogICAgZnRfcHV0c3RyKCIhKSMoJCYhKCkjJiEpKCMmKSgjJiEpIik7Cn0K",
-            
+        "ft_strlen.c": {
+            "test_code_b64": "aW50CW1haW4odm9pZCkgewoJY2hhciBzMVtdID0gIk15U3RyIjsKCWNoYXIgczJbXSA9ICJNeVRlc3Rcbk9mU3VjY2VzcyI7CgljaGFyIHMzW10gPSAiMDEyMzQ1Njc4OWFiY2RlZiI7CgljaGFyIHM0W10gPSAiTXlcdFN0ciI7CgljaGFyIHM1W10gPSAiIjsKCXByaW50ZihmdF9zdHJsZW4oczEpID09IDUgPyAiU3VjY2Vzc1xuIiA6ICJGYWlsXG4iKTsKCXByaW50ZihmdF9zdHJsZW4oczIpID09IDE2ID8gIlN1Y2Nlc3NcbiIgOiAiRmFpbFxuIik7CglwcmludGYoZnRfc3RybGVuKHMzKSA9PSAxNiA/ICJTdWNjZXNzXG4iIDogIkZhaWxcbiIpOwoJcHJpbnRmKGZ0X3N0cmxlbihzNCkgPT0gNiA/ICJTdWNjZXNzXG4iIDogIkZhaWxcbiIpOwoJcHJpbnRmKGZ0X3N0cmxlbihzNSkgPT0gMCA/ICJTdWNjZXNzXG4iIDogIkZhaWxcbiIpOwp9",
+            "verified": "No",
             "expected": {
-                "hash": "a339b6c0eccc0ae77a5efebc8fb0516a"
+                "hash": "583f197e15c03b7706cd3e84ede05b6a"
+            }
+        },
+        "ft_isalpha.c": {
+            "test_code_b64": "I2luY2x1ZGUgPHVuaXN0ZC5oPgojaW5jbHVkZSA8c3RkaW8uaD4KaW50IG1haW4odm9pZCkgewogICAgcHJpbnRmKCIlZCwgIiwgZnRfaXNhbHBoYSgnQScpKTsKICAgIHByaW50ZigiJWQsICIsIGZ0X2lzYWxwaGEoJ2InKSk7CiAgICBwcmludGYoIiVkLCAiLCBmdF9pc2FscGhhKDEyMzIpKTsKICAgIHByaW50ZigiJWQsICIsIGZ0X2lzYWxwaGEoMTIzKSk7CiAgICBwcmludGYoIiVkLCAiLCBmdF9pc2FscGhhKDApKTsKICAgIHByaW50ZigiJWQsICIsIGZ0X2lzYWxwaGEoJyAnKSk7CiAgICBwcmludGYoIiVkLCAiLCBmdF9pc2FscGhhKCdcMCcpKTsKICAgIHByaW50ZigiJWQsICIsIGZ0X2lzYWxwaGEoJ1x0JykpOwogICAgcHJpbnRmKCIlZCwgIiwgZnRfaXNhbHBoYSgnXG4nKSk7CiAgICBwcmludGYoIiVkLCAiLCBmdF9pc2FscGhhKCdcYicpKTsKfQ==",
+            "verified": "No",
+            "expected": {
+                "hash": "2c9205d6fc400fca5dc458bae5b423dd"
+            }
+        },
+        "ft_isdigit.c": {
+            "test_code_b64": "I2luY2x1ZGUgPHVuaXN0ZC5oPgojaW5jbHVkZSA8c3RkaW8uaD4KaW50IG1haW4odm9pZCkgewogICAgcHJpbnRmKCIlZCIsIGZ0X2lzZGlnaXQoJzInKSk7CiAgICBwcmludGYoIiVkIiwgZnRfaXNkaWdpdCgnOScpKTsKICAgIHByaW50ZigiJWQiLCBmdF9pc2RpZ2l0KCdhJykpOwogICAgcHJpbnRmKCIlZCIsIGZ0X2lzZGlnaXQoJ2InKSk7CiAgICBwcmludGYoIiVkIiwgZnRfaXNkaWdpdCgnWicpKTsKICAgIHByaW50ZigiJWQiLCBmdF9pc2RpZ2l0KCdcdCcpKTsKICAgIHByaW50ZigiJWQiLCBmdF9pc2RpZ2l0KCdcbicpKTsKICAgIHByaW50ZigiJWQiLCBmdF9pc2RpZ2l0KCdcYicpKTsKICAgIHByaW50ZigiJWQiLCBmdF9pc2RpZ2l0KDApKTsKICAgIHByaW50ZigiJWQiLCBmdF9pc2RpZ2l0KDIxNDc0ODM2NDcpKTsKICAgIHByaW50ZigiJWQiLCBmdF9pc2RpZ2l0KC0yMTQ3NDgzNjQ4KSk7Cn0=",
+            "verified": "No",
+            "expected": {
+                "hash": "9306d9dd213563a96d9bb8c9aa8e1025"
+            }
+        },
+        "ft_toupper.c": {
+            "test_code_b64": "I2luY2x1ZGUgPHVuaXN0ZC5oPgojaW5jbHVkZSA8c3RkaW8uaD4KaW50IG1haW4odm9pZCkgewoJcHJpbnRmKCIlYyIsIGZ0X3RvdXBwZXIoJ2EnKSk7CglwcmludGYoIiVjIiwgZnRfdG91cHBlcignQicpKTsKCXByaW50ZigiJWMiLCBmdF90b3VwcGVyKCctJykpOwoJcHJpbnRmKCIlYyIsIGZ0X3RvdXBwZXIoJ3onKSk7CglwcmludGYoIiVjIiwgZnRfdG91cHBlcignWicpKTsKCXByaW50ZigiJWMiLCBmdF90b3VwcGVyKC0xKSk7CglwcmludGYoIiVjIiwgZnRfdG91cHBlcigtMjE0NzQ4MzY0OCkpOwoJcHJpbnRmKCIlYyIsIGZ0X3RvdXBwZXIoMjE0NzQ4MzY0NykpOwoJcHJpbnRmKCIlYyIsIGZ0X3RvdXBwZXIoMCkpOwoJcmV0dXJuIDA7Cn0=",
+            "verified": "No",
+            "expected": {
+                "hash": "959e0f4617c544de0f952060bf07f46a"
+            }
+        },
+        "ft_tolower.c": {
+            "test_code_b64": "I2luY2x1ZGUgPHVuaXN0ZC5oPgojaW5jbHVkZSA8c3RkaW8uaD4KaW50IG1haW4odm9pZCkgewogICAgcHJpbnRmKCIlZCIsIGZ0X3RvbG93ZXIoJzInKSk7CiAgICBwcmludGYoIiVkIiwgZnRfdG9sb3dlcignOScpKTsKICAgIHByaW50ZigiJWQiLCBmdF90b2xvd2VyKCdBJykpOwogICAgcHJpbnRmKCIlZCIsIGZ0X3RvbG93ZXIoJ0UnKSk7CiAgICBwcmludGYoIiVkIiwgZnRfdG9sb3dlcignYScpKTsKICAgIHByaW50ZigiJWQiLCBmdF90b2xvd2VyKCdiJykpOwogICAgcHJpbnRmKCIlZCIsIGZ0X3RvbG93ZXIoJ1onKSk7CiAgICBwcmludGYoIiVkIiwgZnRfdG9sb3dlcignXHQnKSk7CiAgICBwcmludGYoIiVkIiwgZnRfdG9sb3dlcignXG4nKSk7CiAgICBwcmludGYoIiVkIiwgZnRfdG9sb3dlcignXGInKSk7CiAgICBwcmludGYoIiVkIiwgZnRfdG9sb3dlcigwKSk7CiAgICBwcmludGYoIiVkIiwgZnRfdG9sb3dlcigyMTQ3NDgzNjQ3KSk7CiAgICBwcmludGYoIiVkIiwgZnRfdG9sb3dlcigtMjE0NzQ4MzY0OCkpOwp9",
+            "verified": "No",
+            "expected": {
+                "hash": "90023182cb2d76a78747297f90487012"
+            }
+        },
+        "ft_strstr.c": {
+            "test_code_b64": "I2luY2x1ZGUgPHN0cmluZy5oPgojaW5jbHVkZSA8dW5pc3RkLmg+CiNpbmNsdWRlIDxzdGRpby5oPgppbnQJbWFpbih2b2lkKSB7CgljaGFyIHMxYVtdID0gIlRoaXMgaXMgT0sgZm9yIG5vdyI7CgljaGFyIHMyYVtdID0gIk9LIjsKCWNoYXIgczFiW10gPSAiVGhpcyBpcyBPSyBmb3Igbm93IjsKCWNoYXIgczJiW10gPSAiT0siOwoJY2hhciBzM2FbXSA9ICJTYW1lIjsKCWNoYXIgczRhW10gPSAiIjsKCWNoYXIgczNiW10gPSAiU2FtZSI7CgljaGFyIHM0YltdID0gIiI7CgljaGFyIHM1YVtdID0gIlNob3J0ZXIiOwoJY2hhciBzNmFbXSA9ICJUaGFuIjsKCWNoYXIgczViW10gPSAiU2hvcnRlciI7CgljaGFyIHM2YltdID0gIlRoYW4iOwoKCXByaW50ZigiJXM6JXNcbiIsIGZ0X3N0cnN0cihzMWEsIHMyYSksIHN0cnN0cihzMWIsIHMyYikpOwoJcHJpbnRmKCIlc1xuIiwgc3RyY21wKHMxYSwgczFiKSA9PSAwICYmIHN0cmNtcChzMmEsIHMyYikgPT0gMCA/ICJTdWNjZXNzIiA6ICJGYWlsIik7CglwcmludGYoIiVzOiVzXG4iLCBmdF9zdHJzdHIoczNhLCBzNGEpLCBzdHJzdHIoczNiLCBzNGIpKTsKCXByaW50ZigiJXNcbiIsIHN0cmNtcChzM2EsIHMzYikgPT0gMCAmJiBzdHJjbXAoczRhLCBzNGIpID09IDAgPyAiU3VjY2VzcyIgOiAiRmFpbCIpOwoJcHJpbnRmKCIlczolc1xuIiwgZnRfc3Ryc3RyKHM1YSwgczZhKSwgc3Ryc3RyKHM1YiwgczZiKSk7CglwcmludGYoIiVzXG4iLCBzdHJjbXAoczVhLCBzNWIpID09IDAgJiYgc3RyY21wKHM2YSwgczZiKSA9PSAwID8gIlN1Y2Nlc3MiIDogIkZhaWwiKTsKfQ==",
+            "verified": "No",
+            "expected": {
+                "hash": "6fa2c42d318d036190b1289c61c5dcee"
             }
         }
-    
-    }
+    },
+    "encouragement_fail": [
+        "Keep going! You're making progress.",
+        "Mistakes happen; they're part of the learning process.",
+        "You're getting closer to the solution!",
+        "Don't be discouraged. Learning takes time.",
+        "Every attempt is a step forward.",
+        "You're on the right track. Keep it up!",
+        "It's okay to struggle. That's where learning happens.",
+        "You're doing better than you think!",
+        "Persistence is key. Keep trying!",
+        "Learning to code is like building a puzzle; you'll get there!",
+        "Your effort is paying off. Keep pushing!",
+        "Great effort! Keep refining your skills.",
+        "Learning is a journey, not a race.",
+        "Every challenge is an opportunity to learn.",
+        "Embrace the learning process. You're doing great!",
+        "Coding is an art, and you're the artist!",
+        "The more you code, the more you grow.",
+        "You're leveling up! Keep going.",
+        "Coding challenges make you stronger.",
+        "Celebrate the small victories; they add up!",
+        "Struggling is part of the fun in coding.",
+        "Code, learn, repeat. You're doing fantastic!",
+        "You're a coding rockstar in the making!",
+        "Learning to code is an adventure. Enjoy it!",
+        "Your dedication is building your coding superpowers.",
+        "No worries! Learning is all about challenges.",
+        "Mistakes happen. Debugging is part of the coding adventure!",
+        "Keep calm and debug on. You're on the right path.",
+        "Errors are stepping stones to success. You're stepping high!",
+        "Learning to code is like solving a puzzle; you just found a piece.",
+        "Dust yourself off; every error is a lesson in disguise.",
+        "Coding is a journey. Don't let detours discourage you.",
+        "Not the result you expected? It's okay; iterate and improve.",
+        "Challenge accepted! Every bug is an opportunity to learn.",
+        "Don't let a setback define your progress. You're growing!",
+        "Facing a setback is just a side quest on your hero's journey. Keep wielding that debugging sword!",
+        "In the realm of coding, setbacks are just temporary dungeons. You'll conquer them and emerge victorious!",
+        "Even Link faced challenges on his quest. Your debugging skills are your master sword; keep it sharp!",
+        "Failed this time? No worries, it's just a respawn point in your coding adventure. Ready, set, code!",
+        "Hyrule wasn't built in a day, and neither is your coding prowess. Every setback is a rupee in disguise!",
+        "Code is not a spectator sport. Grab your HEV suit and dive into the source!",
+        "Remember, in coding, even the simplest tasks can be a crowbar to the head. Keep smashing those bugs!",
+        "Failed tests are like headcrabs. Annoying, but easily dealt with. Reload and try again!",
+        "Coding is a resonance cascade. Embrace the chaos, and let your solutions cascade to success!",
+        "In the world of coding, every challenge is a Black Mesa experiment. You're the scientist; keep experimenting!",
+        "Coding is like leveling up in a game. You're gaining XP with every line of code!",
+        "Remember, even Iron Man had to debug his suits. Suit up and debug on!",
+        "Your code is your canvas; paint a masterpiece, Picasso-style!",
+        "In the world of coding, you're the Neo. Dodge those bugs like bullets in the Matrix!",
+        "Coding is a dance-off. Keep grooving, and your bugs will dance away!",
+        "Don't be a stranger to your code. Give it a hug; it's your digital pet!",
+        "You're not writing code; you're casting spells in the digital wizardry!",
+        "Failed tests are like respawn points in a video game. Retry and respawn as a coding champ!",
+        "Code like it's a Netflix series. Keep the audience hooked with your brilliant plot!",
+        "Even Elon faced rocket failures. Launch your code, and aim for the stars!",
+        "In the coding arena, you're the gladiator. Conquer those bugs and claim victory!",
+        "Coding is like a TikTok trend. Keep up with the trends, but make your own style!",
+        "Your code is a superhero origin story. Embrace the challenges; you're the hero!",
+        "Coding is the ultimate remix. Blend and mix, and create your own tech masterpiece!",
+        "In the symphony of code, you're the composer. Conduct your bugs into harmony!",
+        "Failed this time? It's just a creeper explosion; rebuild and try again!",
+        "Even Steve had to mine through challenges. Keep digging through your code!",
+        "Crafting a successful code is like crafting in Minecraft. Keep refining your recipe!",
+        "In the world of coding, you're a redstone engineer. Debugging is part of the circuit!",
+        "You might have encountered a few blocky bugs. No worries; your code is a diamond in the rough!",
+        "Failed tests are like a creeper sneaking up. Diffuse the situation and retry!",
+        "You're in the Nether of coding challenges. Conquer those setbacks with determination!",
+        "Even in the pixelated world, every block has a purpose. Find the purpose in your code!",
+        "Coding is your own Minecraft adventure. Face the mobs of bugs with courage!",
+        "Failed this quest? Respawn and continue your coding journey in survival mode!",
+        "Your code is a minecart on the rails of progress. Navigate those turns and succeed!",
+        "Debugging is your enchanted pickaxe. Mine through those bugs and uncover success!",
+        "You might have encountered a few Endermen of bugs. Stare them down and debug!",
+        "Failed tests are like falling into lava. Cool off, learn from it, and jump back in!",
+        "Your code is a beacon in the night. Shine through the darkness of setbacks!",
+        "You're the Steve of coding challenges. Equip your tools and conquer the blocky bugs!",
+        "In the pixelated world of coding, every failure is a pixel in the masterpiece of success!",
+        "Your code is a redstone contraption. Adjust the circuits, and it'll light up!",
+        "Failed tests are like a misstep in parkour. Retry and leap to success!",
+        "Your coding journey is as expansive as an open-world map. Navigate through the setbacks!"
+    ],
+    "encouragement_ok": [
+        "Well done! You've mastered this challenge.",
+        "Fantastic! Your code is spot on.",
+        "Perfect execution! Your coding skills are shining.",
+        "Impressive! Your solution is flawless.",
+        "Bravo! You've nailed it.",
+        "Wow! Have you obtained the Triforce of Coding?!",
+        "Hyrule applauds your coding power. Well done!",
+        "You're the Link of coding, triumphing over challenges!",
+        "Victory fanfare plays! You've conquered this quest.",
+        "In the coding kingdom, you're the Hero of Time. Great success!",
+        "Incredible! Your code defies the laws of physics.",
+        "Oh, Mr. Freeman! Well done!",
+        "Success is a resonance cascade! Your code is cascading perfectly.",
+        "Your code is like the HEV suit - unstoppable and efficient. Well done!",
+        "Your code defies the laws of physics! Incredible!",
+        "You've unlocked an achievement! Your code is on point.",
+        "You're a pro! Your solution is top-tier.",
+        "Congratulations!",
+        "Brilliant! Your code is making waves in the digital ocean.",
+        "You're coding like Tony Stark in his Iron Man suit. Genius level!",
+        "May the force be with you in coding. Your skills are Jedi-worthy.",
+        "Code like you're in the Shire, on a quest for bug-free solutions!",
+        "Great Scott! Your code is traveling through time and succeeding.",
+        "To infinity and beyond! Your coding journey is reaching new heights.",
+        "Your code is more legendary than the One Ring. Keep shining!",
+        "You're coding like a wizard at Hogwarts. Your spells are flawless.",
+        "Your code is the hero Gotham deserves. Keep saving the day!",
+        "Nice! Your coding skills are evolving like Pok\u00e9mon.",
+        "Your code is as epic as the Avengers' battle scenes. Well done!",
+        "You're coding with the precision of a surgeon in Grey Sloan Memorial.",
+        "Your solutions are as sleek as the Batmobile. Drive on, coding hero!",
+        "In the coding galaxy, you're the chosen one. Your skills are unmatched.",
+        "Your code is as legendary as Sherlock's deductions. Elementary!",
+        "Coding success is your superpower. Embrace it like a Marvel hero!",
+        "Your code is as thrilling as a rollercoaster ride. Enjoy the success!",
+        "You're coding like a rockstar. Your solutions are chart-topping!",
+        "Your code is as iconic as the 'Friends' theme song. Well played!",
+        "In the coding arena, you're the Katniss Everdeen. Aim high and succeed!",
+        "Your coding journey is as epic as the Game of Thrones saga. Conquer the bugs!"
+    ]
 }

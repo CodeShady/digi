@@ -1,16 +1,26 @@
+#  __     __             __   ___ ___       ___ __
+# |  \ | |  \     |     / _` |__   |      |  |   _|
+# |__/ | |__/ ___ | ___ \__> |___  |  ___ |  |   .
+# 
+# By CodeShady (ftp)
+# https://github.com/CodeShady/digi
+
 import argparse
-import os
+import os, sys
 import json
 import subprocess
 import hashlib
+import random
 
 # Globals
 HOME_DIR_PATH = os.path.expanduser('~')
 DATA_FILE_DIR_PATH = os.path.join(HOME_DIR_PATH, ".local/share/")
 DATA_FILE = "data.json"
+CURRENT_VERSION = "1.0"
 
 # Colors
 class Color:
+    # Text colors
     BLACK   = '\033[30m'
     RED     = '\033[31m'
     GREEN   = '\033[32m'
@@ -19,17 +29,34 @@ class Color:
     MAGENTA = '\033[35m'
     CYAN    = '\033[36m'
     WHITE   = '\033[37m'
-    RESET   = '\033[39m'
+    RESET   = '\033[0m'
+
+    # Backgrounds
+    BLACK_BACKGROUND = "\033[40m"  # BLACK
+    RED_BACKGROUND = "\033[41m"    # RED
+    GREEN_BACKGROUND = "\033[42m"  # GREEN
+    YELLOW_BACKGROUND = "\033[43m" # YELLOW
+    BLUE_BACKGROUND = "\033[44m"   # BLUE
+    PURPLE_BACKGROUND = "\033[45m" # PURPLE
+    CYAN_BACKGROUND = "\033[46m"   # CYAN
+    WHITE_BACKGROUND = "\033[47m"  # WHITE
+
 
 # Functions
-def info(text):
-    print(f"INFO: {text}")
+def logo():
+    print(Color.RED + """ __     __             __   ___ ___       ___ __ 
+|  \ | |  \     |     / _` |__   |      |  |   _|
+|__/ | |__/ ___ | ___ \__> |___  |  ___ |  |   .""" + Color.RESET + "  (by cs)\n")
 
-def ok():
-    return Color.GREEN + "✅ OK!" + Color.RESET
+def ok(message=None):
+    if message != None:
+        print(message, end=" ")
+    print(Color.GREEN + "✅ OK!" + Color.RESET)
 
-def fail():
-    return Color.RED + "🟥 FAIL" + Color.RESET
+def fail(message=None):
+    if message != None:
+        print(message, end=" ")
+    print(Color.RED + "🟥 FAIL" + Color.RESET)
 
 def warn():
     return Color.YELLOW + "🤔 WARN" + Color.RESET
@@ -46,9 +73,17 @@ def is_file(path):
     return os.path.isfile(path)
 
 def download_latest_data():
-    print("Getting latest data... ", end="")
-    os.system("cp ~/Documents/Tools/data.json ~/.local/share")
-    print(ok())
+    print("Getting latest data...", end="\r")
+    os.system("cp /Users/finnt-p/Workspace/Documents/GitHub/digi/data.json ~/.local/share")
+    ok("Getting latest data")
+
+def friendly_message(json_data, has_failed=False):
+    if has_failed:
+        # You've failed, but keep going messages!
+        return random.choice(json_data["encouragement_fail"])
+    else:
+        # Success messages!
+        return random.choice(json_data["encouragement_ok"])
 
 def md5sum(filename):
     return hashlib.md5(open(os.path.join(os.getcwd(), filename), "rb").read()).hexdigest()
@@ -77,44 +112,59 @@ def run_command(command=[], show_output=False):
 
 
 # Running different code files (c, bash, python, etc)
-def run_program(filename, expectations):
+def run_program(filename, json_data):
     # Find what code type this file is
     
     # C Program
     if filename.endswith(".c"):
         # Compile & run
         if run_command(["norminette", filename])["returncode"] != 0:
-            print("Norminette " + fail())
+            fail("Norminette")
             return
         
-        print("Norminette " + ok())
+        ok("Norminette ")
         run_command(["cp", filename, ".tmp_user_code.c"])
-        os.system("echo \"" + expectations["test_code_b64"] + "\" | base64 -d >> .tmp_test_code")
+        os.system("echo \"" + json_data["projects"][filename]["test_code_b64"] + "\" | base64 -d >> .tmp_test_code")
         os.system("cat .tmp_test_code >> .tmp_user_code.c")
         
-        info("Using test code:")
+        print("Using Test Code ⬇️")
         os.system("bat .tmp_test_code --style=grid -l c --theme=\"TwoDark\"")
         
         # Compling & Running
-        if run_command(["cc", "-Wall", "-Wextra", "-Werror", ".tmp_user_code.c"])["statuscode"] != 0:
-            print("Compiling " + fail())
+        if run_command(["cc", "-Wall", "-Wextra", "-Werror", ".tmp_user_code.c"])["returncode"] != 0:
+            fail("Compiling")
             return
 
-        print("Compiling " + ok())
+        ok("Compiling")
         os.system("./a.out > .tmp_user_output")
         
         # Comparing checksums
-        print("Expected:\t" + Color.GREEN + expectations["expected"]["hash"] + Color.RESET)
-    
-        if md5sum(".tmp_user_output") == expectations["expected"]["hash"]:
-            print("Returned:\t" + Color.GREEN + md5sum(".tmp_user_output") + Color.RESET)
-            print("\n" + ok())
+        print("Expected:\t" + Color.GREEN + json_data["projects"][filename]["expected"]["hash"] + Color.RESET, end=" ")
+        
+        # If the "verified" flag was set for this project, then somebody has used the same output to
+        # pass the grader, so it's verified as the correct output.
+        if json_data["projects"][filename]["verified"] == "Yes":
+            print("(" + Color.GREEN + "Verified" + Color.RESET + ")")
         else:
-            print("Returned:\t" + Color.RED + md5sum(".tmp_user_output") + Color.RESET)
-            print("\n" + fail())
+            print("(" + Color.RED + "Not Verified" + Color.RESET + ")")
+    
+        if md5sum(".tmp_user_output") == json_data["projects"][filename]["expected"]["hash"]:
+            print("Returned:\t" + Color.GREEN + md5sum(".tmp_user_output") + Color.RESET, end="\n\n")
+            print(Color.GREEN + friendly_message(json_data, has_failed=False) + Color.RESET, end="\n\n")
+            ok()
+        else:
+            print("Returned:\t" + Color.RED + md5sum(".tmp_user_output") + Color.RESET, end="\n\n")
+            print(Color.YELLOW + friendly_message(json_data, has_failed=True) + Color.RESET, end="\n\n")
+            fail()
 
 # Main
 if __name__ == "__main__":
+    # Firstly, cleanup any files left by the script before
+    cleanup()
+
+    # Show the banner/logo
+    logo()
+
     # Set up arguments
     parser = argparse.ArgumentParser()
 
@@ -124,6 +174,11 @@ if __name__ == "__main__":
     # Parse arguments
     args = parser.parse_args()
 
+    # Check if the passed in file exists
+    if not is_file(args.file):
+        print(args.file + " doesn't exist!")
+        sys.exit(1)
+
     # Download latest data pack
     download_latest_data()
 
@@ -132,10 +187,17 @@ if __name__ == "__main__":
         # Parse the json data file
         json_data = json.load(data_file)
 
+        # Check if this program is the latest version or
+        # if there's an update avaliable
+        if json_data["latest_version"] != CURRENT_VERSION:
+            print("")
+            print(Color.RED_BACKGROUND + "!!! A new update is available for this script !!!" + Color.RESET)
+            print(Color.YELLOW + ">>> Get the latest script here >>> github.com/CodeShady/digi" + Color.RESET)
+            print("")
+
         # Find the argument file passed in in the data file
         if args.file in json_data["projects"]:
-            run_program(args.file, json_data["projects"][args.file])
+            run_program(args.file, json_data)
             cleanup()
         else:
             print("No projects found with that file name!")
-
